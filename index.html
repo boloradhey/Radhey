@@ -3,7 +3,7 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>
-   Radhey | Premium Portfolio
+   Radhey | Premium Portfolio - Black Goku Theme
   </title>
   <script src="https://cdn.tailwindcss.com">
   </script>
@@ -11,11 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
   <style>
    :root {
-        --primary: #6366f1;
-        --secondary: #10b981;
-        --accent: #f59e0b;
-        --dark: #1e293b;
-        --light: #f8fafc;
+        --primary: #1f2937; /* dark slate */
+        --secondary: #f87171; /* red-400 */
+        --accent: #fbbf24; /* amber-400 */
+        --dark: #f8fafc; /* light text */
+        --light: #0f172a; /* very dark bg */
         --font: "Poppins", sans-serif;
       }
 
@@ -27,14 +27,14 @@
       }
 
       .gradient-text {
-        background: linear-gradient(45deg, var(--primary), var(--secondary));
+        background: linear-gradient(45deg, var(--secondary), var(--accent));
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
       }
 
       .gradient-bg {
-        background: linear-gradient(45deg, var(--primary), var(--secondary));
+        background: linear-gradient(45deg, var(--secondary), var(--accent));
       }
 
       @keyframes float {
@@ -84,10 +84,10 @@
       }
 
       .glass-card {
-        background: rgba(255, 255, 255, 0.15);
+        background: rgba(31, 41, 55, 0.6);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.12);
       }
 
       .page {
@@ -107,6 +107,7 @@
       .nav-link {
         position: relative;
         transition: all 0.3s ease;
+        color: var(--dark);
       }
 
       .nav-link::after {
@@ -116,7 +117,7 @@
         left: 0;
         width: 0;
         height: 2px;
-        background: var(--primary);
+        background: var(--secondary);
         transition: width 0.3s ease;
       }
 
@@ -138,66 +139,196 @@
         height: 100%;
         object-fit: cover;
         border-radius: 50%;
+        filter: drop-shadow(0 0 5px var(--secondary));
+      }
+
+      /* Scrollbar for dark theme */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--light);
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: var(--secondary);
+        border-radius: 10px;
+        border: 2px solid var(--light);
+      }
+
+      /* Override shadows for dark theme */
+      .shadow-xl {
+        box-shadow: 0 10px 15px -3px rgba(248, 113, 113, 0.4), 0 4px 6px -2px rgba(251, 191, 36, 0.3);
+      }
+      .shadow-2xl {
+        box-shadow: 0 25px 50px -12px rgba(248, 113, 113, 0.5);
+      }
+      .shadow-md {
+        box-shadow: 0 4px 6px -1px rgba(248, 113, 113, 0.3), 0 2px 4px -1px rgba(251, 191, 36, 0.2);
+      }
+      .shadow-lg {
+        box-shadow: 0 10px 15px -3px rgba(248, 113, 113, 0.4), 0 4px 6px -2px rgba(251, 191, 36, 0.3);
+      }
+
+      /* Cards background */
+      .bg-white {
+        background-color: #1f2937 !important;
+        color: var(--dark) !important;
+      }
+
+      /* Input and textarea styling */
+      input, textarea {
+        background-color: #374151 !important;
+        color: var(--dark) !important;
+        border-color: #6b7280 !important;
+      }
+      input::placeholder, textarea::placeholder {
+        color: #9ca3af !important;
+      }
+      input:focus, textarea:focus {
+        background-color: #1f2937 !important;
+        border-color: var(--secondary) !important;
+        color: var(--dark) !important;
+      }
+
+      /* Buttons */
+      button.gradient-bg {
+        background: linear-gradient(45deg, var(--secondary), var(--accent));
+        color: var(--dark);
+      }
+      button.gradient-bg:hover {
+        opacity: 0.85;
+      }
+
+      /* Floating circles recolored */
+      .fixed.top-20.right-20 {
+        background-color: #f87171 !important;
+        opacity: 0.15 !important;
+      }
+      .fixed.bottom-32.left-32 {
+        background-color: #fbbf24 !important;
+        opacity: 0.15 !important;
+      }
+      .fixed.top-1\/2.left-10 {
+        background-color: #ef4444 !important;
+        opacity: 0.1 !important;
+      }
+      .fixed.bottom-10.right-10 {
+        background-color: #f59e0b !important;
+        opacity: 0.1 !important;
+      }
+
+      /* Social icons background overrides */
+      .bg-blue-100 {
+        background-color: #1e40af !important;
+      }
+      .bg-green-100 {
+        background-color: #15803d !important;
+      }
+      .bg-indigo-100 {
+        background-color: #4338ca !important;
+      }
+      .bg-yellow-100 {
+        background-color: #b45309 !important;
+      }
+      .bg-pink-100 {
+        background-color: #be185d !important;
+      }
+      .bg-gray-200 {
+        background-color: #374151 !important;
+      }
+
+      /* Social icon colors */
+      .text-blue-500 {
+        color: #3b82f6 !important;
+      }
+      .text-green-500 {
+        color: #22c55e !important;
+      }
+      .text-indigo-600 {
+        color: #4f46e5 !important;
+      }
+      .text-yellow-500 {
+        color: #ca8a04 !important;
+      }
+      .text-pink-600 {
+        color: #db2777 !important;
+      }
+      .text-gray-800 {
+        color: #d1d5db !important;
+      }
+      .text-blue-700 {
+        color: #1d4ed8 !important;
+      }
+
+      /* Text colors overrides */
+      .text-gray-700 {
+        color: #d1d5db !important;
+      }
+      .text-gray-600 {
+        color: #9ca3af !important;
+      }
+      .text-gray-500 {
+        color: #6b7280 !important;
       }
   </style>
  </head>
  <body class="min-h-screen relative">
   <!-- Floating decorations -->
-  <div class="fixed top-20 right-20 w-16 h-16 rounded-full bg-purple-100 opacity-20 floating">
+  <div class="fixed top-20 right-20 w-16 h-16 rounded-full floating">
   </div>
-  <div class="fixed bottom-32 left-32 w-24 h-24 rounded-full bg-blue-100 opacity-20 floating" style="animation-delay: 2s;">
+  <div class="fixed bottom-32 left-32 w-24 h-24 rounded-full floating" style="animation-delay: 2s;">
   </div>
-  <div class="fixed top-1/2 left-10 w-12 h-12 rounded-full bg-green-100 opacity-15 floating" style="animation-delay: 4s;">
+  <div class="fixed top-1/2 left-10 w-12 h-12 rounded-full floating" style="animation-delay: 4s;">
   </div>
-  <div class="fixed bottom-10 right-10 w-20 h-20 rounded-full bg-yellow-100 opacity-15 floating" style="animation-delay: 1.5s;">
+  <div class="fixed bottom-10 right-10 w-20 h-20 rounded-full floating" style="animation-delay: 1.5s;">
   </div>
   <div class="container mx-auto px-4 py-12 max-w-7xl">
    <!-- Header -->
    <header class="flex flex-col md:flex-row justify-between items-center mb-16">
     <div class="text-center md:text-left mb-8 md:mb-0">
-     <h1 class="text-4xl md:text-5xl font-bold gradient-text tracking-wide">
+     <h1 class="text-4xl md:text-5xl font-bold gradient-text tracking-wide select-none">
       𝗥𝗔𝗗𝗛𝗘𝗬 ✨
      </h1>
-     <p class="text-lg md:text-xl text-gray-600 mt-2 max-w-md mx-auto md:mx-0">
+     <p class="text-lg md:text-xl text-gray-500 mt-2 max-w-md mx-auto md:mx-0">
       Just a normal person trying to do the best... 💯
      </p>
     </div>
     <div class="flex space-x-4">
-     <a aria-label="Telegram" class="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center hover-grow" href="https://t.me/boloradhey" target="_blank">
-      <i class="fab fa-telegram text-blue-500 text-xl">
+     <a aria-label="Telegram" class="w-12 h-12 rounded-full bg-gray-800 shadow-md flex items-center justify-center hover-grow" href="https://t.me/boloradhey" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-telegram text-blue-400 text-xl">
       </i>
      </a>
-     <a aria-label="Instagram" class="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center hover-grow" href="https://instagram.com/radheypy" target="_blank">
+     <a aria-label="Instagram" class="w-12 h-12 rounded-full bg-gray-800 shadow-md flex items-center justify-center hover-grow" href="https://instagram.com/radheypy" rel="noopener noreferrer" target="_blank">
       <i class="fab fa-instagram text-pink-500 text-xl">
       </i>
      </a>
-     <a aria-label="Snapchat" class="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center hover-grow" href="https://snapchat.com/add/mr.dimensionn" target="_blank">
+     <a aria-label="Snapchat" class="w-12 h-12 rounded-full bg-gray-800 shadow-md flex items-center justify-center hover-grow" href="https://snapchat.com/add/mr.dimensionn" rel="noopener noreferrer" target="_blank">
       <i class="fab fa-snapchat-ghost text-yellow-400 text-xl">
       </i>
      </a>
-     <a aria-label="GitHub" class="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center hover-grow" href="https://github.com/boloradhey" target="_blank">
-      <i class="fab fa-github text-gray-800 text-xl">
+     <a aria-label="GitHub" class="w-12 h-12 rounded-full bg-gray-800 shadow-md flex items-center justify-center hover-grow" href="https://github.com/boloradhey" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-github text-gray-300 text-xl">
       </i>
      </a>
-     <a aria-label="LinkedIn" class="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center hover-grow" href="https://linkedin.com/in/was-dimu-2a8577370" target="_blank">
-      <i class="fab fa-linkedin-in text-blue-700 text-xl">
+     <a aria-label="LinkedIn" class="w-12 h-12 rounded-full bg-gray-800 shadow-md flex items-center justify-center hover-grow" href="https://linkedin.com/in/was-dimu-2a8577370" rel="noopener noreferrer" target="_blank">
+      <i class="fab fa-linkedin-in text-blue-600 text-xl">
       </i>
      </a>
     </div>
    </header>
    <!-- Navigation -->
    <nav class="mb-12 flex justify-center">
-    <div class="inline-flex space-x-2 md:space-x-8 bg-white rounded-full px-4 py-2 shadow-md">
-     <a class="nav-link px-3 py-1 font-medium active" data-page="about" href="#about">
+    <div class="inline-flex space-x-2 md:space-x-8 bg-gray-900 rounded-full px-4 py-2 shadow-md">
+     <a class="nav-link px-3 py-1 font-medium active select-none" data-page="about" href="#about">
       About Me 👋
      </a>
-     <a class="nav-link px-3 py-1 font-medium" data-page="skills" href="#skills">
+     <a class="nav-link px-3 py-1 font-medium select-none" data-page="skills" href="#skills">
       Skills 🛠️
      </a>
-     <a class="nav-link px-3 py-1 font-medium" data-page="social" href="#social">
+     <a class="nav-link px-3 py-1 font-medium select-none" data-page="social" href="#social">
       Socials 🔗
      </a>
-     <a class="nav-link px-3 py-1 font-medium" data-page="contact" href="#contact">
+     <a class="nav-link px-3 py-1 font-medium select-none" data-page="contact" href="#contact">
       Contact 💌
      </a>
     </div>
@@ -208,37 +339,37 @@
     <div class="page active" id="about">
      <div class="grid lg:grid-cols-2 gap-12 items-center">
       <div class="space-y-8 fade-in">
-       <div class="bg-white p-6 rounded-2xl shadow-xl hover-grow">
-        <h2 class="text-2xl font-bold mb-4">
+       <div class="bg-gray-900 p-6 rounded-2xl shadow-xl hover-grow glass-card">
+        <h2 class="text-2xl font-bold mb-4 text-gray-100">
          Hey there! I'm Radhey 🎯
         </h2>
-        <div class="space-y-4 text-gray-700 leading-relaxed">
+        <div class="space-y-4 text-gray-300 leading-relaxed">
          <p>
-          <span class="font-semibold">
+          <span class="font-semibold text-red-400">
            Real Name:
           </span>
           Radhey ✔️
          </p>
          <p>
-          <span class="font-semibold">
+          <span class="font-semibold text-red-400">
            Age:
           </span>
-          17+ 🎂
+          17+
          </p>
          <p>
-          <span class="font-semibold">
+          <span class="font-semibold text-red-400">
            Username:
           </span>
-          @boloradhey 🕷️
+          @boloradhey 
          </p>
          <p>
-          <span class="font-semibold">
+          <span class="font-semibold text-red-400">
            TG Name:
           </span>
           ✨||राधे!!🦚🪈
          </p>
          <p>
-          <span class="font-semibold">
+          <span class="font-semibold text-red-400">
            Favorite Song:
           </span>
           Radhey Radhey ⭐
@@ -249,8 +380,8 @@
         </div>
        </div>
        <div class="grid grid-cols-2 gap-4">
-        <div class="bg-white p-4 rounded-xl shadow-md hover-grow flex items-center space-x-4">
-         <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 text-xl">
+        <div class="bg-gray-900 p-4 rounded-xl shadow-md hover-grow flex items-center space-x-4 glass-card">
+         <div class="w-12 h-12 rounded-full bg-blue-900 flex items-center justify-center text-blue-400 text-xl">
           <i class="fas fa-map-marker-alt">
           </i>
          </div>
@@ -258,13 +389,13 @@
           <p class="text-xs text-gray-500">
            Location
           </p>
-          <p class="font-medium">
+          <p class="font-medium text-gray-300">
            India 🇮🇳
           </p>
          </div>
         </div>
-        <div class="bg-white p-4 rounded-xl shadow-md hover-grow flex items-center space-x-4">
-         <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-500 text-xl">
+        <div class="bg-gray-900 p-4 rounded-xl shadow-md hover-grow flex items-center space-x-4 glass-card">
+         <div class="w-12 h-12 rounded-full bg-green-900 flex items-center justify-center text-green-400 text-xl">
           <i class="fas fa-code">
           </i>
          </div>
@@ -272,13 +403,13 @@
           <p class="text-xs text-gray-500">
            Projects
           </p>
-          <p class="font-medium">
+          <p class="font-medium text-gray-300">
            3+ Completed 💻
           </p>
          </div>
         </div>
-        <div class="bg-white p-4 rounded-xl shadow-md hover-grow flex items-center space-x-4">
-         <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 text-xl">
+        <div class="bg-gray-900 p-4 rounded-xl shadow-md hover-grow flex items-center space-x-4 glass-card">
+         <div class="w-12 h-12 rounded-full bg-indigo-900 flex items-center justify-center text-indigo-400 text-xl">
           <i class="fas fa-rocket">
           </i>
          </div>
@@ -286,13 +417,13 @@
           <p class="text-xs text-gray-500">
            Ambition
           </p>
-          <p class="font-medium">
+          <p class="font-medium text-gray-300">
            Always Learning &amp; Growing 🚀
           </p>
          </div>
         </div>
-        <div class="bg-white p-4 rounded-xl shadow-md hover-grow flex items-center space-x-4">
-         <div class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-500 text-xl">
+        <div class="bg-gray-900 p-4 rounded-xl shadow-md hover-grow flex items-center space-x-4 glass-card">
+         <div class="w-12 h-12 rounded-full bg-yellow-900 flex items-center justify-center text-yellow-400 text-xl">
           <i class="fas fa-lightbulb">
           </i>
          </div>
@@ -300,7 +431,7 @@
           <p class="text-xs text-gray-500">
            Passion
           </p>
-          <p class="font-medium">
+          <p class="font-medium text-gray-300">
            Creative Problem Solving 💡
           </p>
          </div>
@@ -310,13 +441,13 @@
       <div class="flex justify-center fade-in delay-1 relative">
        <div class="relative">
         <div class="w-64 h-64 md:w-80 md:h-80 gradient-bg rounded-full overflow-hidden shadow-2xl floating">
-         <img alt="Portrait of Gojo Satoru, a fictional anime character with white hair and blindfold, smiling confidently" class="profile-img" src="https://i.imgur.com/JQK9w5T.jpg"/>
+         <img alt="Portrait of Black Goku, a fictional anime character with spiky black hair and intense glowing red eyes, wearing a dark martial arts gi, standing in a powerful pose with dark energy aura" class="profile-img" height="320" src="https://storage.googleapis.com/a1aa/image/689897b9-f7f3-46f7-5b0f-7fdb8d7bb2cc.jpg" width="320"/>
         </div>
-        <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-xl shadow-lg hover-grow flex flex-col items-center justify-center w-20">
-         <div class="text-2xl font-bold text-primary text-indigo-600">
+        <div class="absolute -bottom-4 -right-4 bg-gray-900 p-4 rounded-xl shadow-lg hover-grow flex flex-col items-center justify-center w-20 glass-card">
+         <div class="text-2xl font-bold text-red-400">
           3+
          </div>
-         <div class="text-sm text-gray-600 text-center">
+         <div class="text-sm text-gray-400 text-center">
           Projects Done 👨‍💻
          </div>
         </div>
@@ -326,7 +457,7 @@
     </div>
     <!-- Skills Page -->
     <div class="page" id="skills">
-     <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center fade-in">
+     <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center fade-in text-gray-100">
       My
       <span class="gradient-text">
        Skills
@@ -335,97 +466,97 @@
      </h2>
      <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 fade-in delay-1">
       <!-- Skill Card: Python Development -->
-      <div class="bg-white p-6 rounded-2xl shadow-xl hover-grow flex flex-col items-center text-center">
-       <img alt="Python logo, blue and yellow intertwined snakes forming a shape" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/6d1e1115-0dbd-4fd7-47cb-06fba98728a0.jpg" width="80"/>
-       <h3 class="text-xl font-semibold mb-2">
+      <div class="bg-gray-900 p-6 rounded-2xl shadow-xl hover-grow flex flex-col items-center text-center glass-card">
+       <img alt="Python logo, blue and yellow intertwined snakes forming a shape" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/495ce5d5-b16c-4ce1-ab60-f9d1832a45c4.jpg" width="80"/>
+       <h3 class="text-xl font-semibold mb-2 text-gray-100">
         Python Development
        </h3>
-       <p class="text-gray-700 mb-4">
+       <p class="text-gray-300 mb-4">
         I develop powerful Python tools and scripts for various social media platforms to automate tasks, analyze data, and enhance user engagement.
        </p>
        <div class="flex flex-wrap justify-center gap-2">
-        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="bg-blue-900 text-blue-400 px-3 py-1 rounded-full text-sm font-medium">
          Automation
         </span>
-        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="bg-blue-900 text-blue-400 px-3 py-1 rounded-full text-sm font-medium">
          Data Analysis
         </span>
-        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="bg-blue-900 text-blue-400 px-3 py-1 rounded-full text-sm font-medium">
          APIs
         </span>
-        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="bg-blue-900 text-blue-400 px-3 py-1 rounded-full text-sm font-medium">
          Bots
         </span>
        </div>
       </div>
       <!-- Skill Card: Web Development -->
-      <div class="bg-white p-6 rounded-2xl shadow-xl hover-grow flex flex-col items-center text-center">
-       <img alt="Icon representing web development with code brackets and a globe" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/95f141a6-88f8-435f-c529-3aa29c0d9969.jpg" width="80"/>
-       <h3 class="text-xl font-semibold mb-2">
+      <div class="bg-gray-900 p-6 rounded-2xl shadow-xl hover-grow flex flex-col items-center text-center glass-card">
+       <img alt="Icon representing web development with code brackets and a globe" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/8777009a-bb65-40a2-9a37-f55f1d17b1c2.jpg" width="80"/>
+       <h3 class="text-xl font-semibold mb-2 text-gray-100">
         Web Development
        </h3>
-       <p class="text-gray-700 mb-4">
+       <p class="text-gray-300 mb-4">
         Skilled in building responsive, modern websites and web apps using HTML, CSS, JavaScript, and frameworks like Tailwind CSS to create seamless user experiences.
        </p>
        <div class="flex flex-wrap justify-center gap-2">
-        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="bg-green-900 text-green-400 px-3 py-1 rounded-full text-sm font-medium">
          HTML
         </span>
-        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="bg-green-900 text-green-400 px-3 py-1 rounded-full text-sm font-medium">
          CSS
         </span>
-        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="bg-green-900 text-green-400 px-3 py-1 rounded-full text-sm font-medium">
          JavaScript
         </span>
-        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="bg-green-900 text-green-400 px-3 py-1 rounded-full text-sm font-medium">
          Tailwind CSS
         </span>
        </div>
       </div>
       <!-- Skill Card: Social Media Strategy -->
-      <div class="bg-white p-6 rounded-2xl shadow-xl hover-grow flex flex-col items-center text-center">
-       <img alt="Icon representing social media strategy with network nodes and connections" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/81d86b5c-3c63-4ebf-0c1b-fece11a9cdd3.jpg" width="80"/>
-       <h3 class="text-xl font-semibold mb-2">
+      <div class="bg-gray-900 p-6 rounded-2xl shadow-xl hover-grow flex flex-col items-center text-center glass-card">
+       <img alt="Icon representing social media strategy with network nodes and connections" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/d70a9e3c-471c-4d4d-612d-553b2b15c18b.jpg" width="80"/>
+       <h3 class="text-xl font-semibold mb-2 text-gray-100">
         Social Media Strategy
        </h3>
-       <p class="text-gray-700 mb-4">
+       <p class="text-gray-300 mb-4">
         Experienced in crafting strategies to grow social media presence, engage audiences, and analyze trends to maximize impact across platforms.
        </p>
        <div class="flex flex-wrap justify-center gap-2">
-        <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="bg-pink-900 text-pink-400 px-3 py-1 rounded-full text-sm font-medium">
          Content Creation
         </span>
-        <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="bg-pink-900 text-pink-400 px-3 py-1 rounded-full text-sm font-medium">
          Analytics
         </span>
-        <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="bg-pink-900 text-pink-400 px-3 py-1 rounded-full text-sm font-medium">
          Engagement
         </span>
-        <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="bg-pink-900 text-pink-400 px-3 py-1 rounded-full text-sm font-medium">
          Growth
         </span>
        </div>
       </div>
       <!-- Skill Card: Problem Solving -->
-      <div class="bg-white p-6 rounded-2xl shadow-xl hover-grow flex flex-col items-center text-center">
-       <img alt="Icon representing problem solving with a puzzle piece" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/7398ac6f-16d1-42f7-0c76-b104be67faf2.jpg" width="80"/>
-       <h3 class="text-xl font-semibold mb-2">
+      <div class="bg-gray-900 p-6 rounded-2xl shadow-xl hover-grow flex flex-col items-center text-center glass-card">
+       <img alt="Icon representing problem solving with a puzzle piece" class="mb-4" height="80" src="https://storage.googleapis.com/a1aa/image/4ff549ff-8294-43fd-32a0-52dd7117236c.jpg" width="80"/>
+       <h3 class="text-xl font-semibold mb-2 text-gray-100">
         Problem Solving
        </h3>
-       <p class="text-gray-700 mb-4">
+       <p class="text-gray-300 mb-4">
         Strong analytical skills to break down complex problems and deliver effective, creative solutions in coding and project challenges.
        </p>
        <div class="flex flex-wrap justify-center gap-2">
-        <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="bg-indigo-900 text-indigo-400 px-3 py-1 rounded-full text-sm font-medium">
          Algorithms
         </span>
-        <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="bg-indigo-900 text-indigo-400 px-3 py-1 rounded-full text-sm font-medium">
          Debugging
         </span>
-        <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="bg-indigo-900 text-indigo-400 px-3 py-1 rounded-full text-sm font-medium">
          Critical Thinking
         </span>
-        <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="bg-indigo-900 text-indigo-400 px-3 py-1 rounded-full text-sm font-medium">
          Creativity
         </span>
        </div>
@@ -434,7 +565,7 @@
     </div>
     <!-- Social Media Page -->
     <div class="page" id="social">
-     <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center fade-in">
+     <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center fade-in text-gray-100">
       My
       <span class="gradient-text">
        Social Profiles
@@ -443,21 +574,21 @@
      </h2>
      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Telegram -->
-      <a aria-label="Telegram Profile" class="group" href="https://t.me/boloradhey" target="_blank">
-       <div class="bg-white p-6 rounded-2xl shadow-xl hover-grow fade-in delay-1">
+      <a aria-label="Telegram Profile" class="group" href="https://t.me/boloradhey" rel="noopener noreferrer" target="_blank">
+       <div class="bg-gray-900 p-6 rounded-2xl shadow-xl hover-grow fade-in delay-1 glass-card">
         <div class="flex items-center mb-4">
-         <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center mr-4 group-hover:bg-blue-500 group-hover:text-white transition">
-          <i class="fab fa-telegram text-blue-500 text-2xl group-hover:text-white">
+         <div class="w-14 h-14 rounded-xl bg-blue-900 flex items-center justify-center mr-4 group-hover:bg-blue-500 group-hover:text-white transition">
+          <i class="fab fa-telegram text-blue-400 text-2xl group-hover:text-white">
           </i>
          </div>
-         <h3 class="text-xl font-semibold group-hover:text-blue-500 transition">
+         <h3 class="text-xl font-semibold group-hover:text-blue-400 transition text-gray-100">
           Telegram
          </h3>
         </div>
-        <p class="text-gray-700 mb-4">
+        <p class="text-gray-300 mb-4">
          Connect with me on Telegram for quick chats and updates.
         </p>
-        <div class="text-blue-500 font-medium flex items-center">
+        <div class="text-blue-400 font-medium flex items-center">
          @boloradhey
          <i class="fas fa-external-link-alt ml-2 text-sm">
          </i>
@@ -465,21 +596,21 @@
        </div>
       </a>
       <!-- Instagram -->
-      <a aria-label="Instagram Profile" class="group" href="https://instagram.com/radheypy" target="_blank">
-       <div class="bg-white p-6 rounded-2xl shadow-xl hover-grow fade-in delay-2">
+      <a aria-label="Instagram Profile" class="group" href="https://instagram.com/radheypy" rel="noopener noreferrer" target="_blank">
+       <div class="bg-gray-900 p-6 rounded-2xl shadow-xl hover-grow fade-in delay-2 glass-card">
         <div class="flex items-center mb-4">
-         <div class="w-14 h-14 rounded-xl bg-pink-100 flex items-center justify-center mr-4 group-hover:bg-pink-600 group-hover:text-white transition">
-          <i class="fab fa-instagram text-pink-600 text-2xl group-hover:text-white">
+         <div class="w-14 h-14 rounded-xl bg-pink-900 flex items-center justify-center mr-4 group-hover:bg-pink-600 group-hover:text-white transition">
+          <i class="fab fa-instagram text-pink-500 text-2xl group-hover:text-white">
           </i>
          </div>
-         <h3 class="text-xl font-semibold group-hover:text-pink-600 transition">
+         <h3 class="text-xl font-semibold group-hover:text-pink-500 transition text-gray-100">
           Instagram
          </h3>
         </div>
-        <p class="text-gray-700 mb-4">
+        <p class="text-gray-300 mb-4">
          Check out my Instagram for the latest updates and posts.
         </p>
-        <div class="text-pink-600 font-medium flex items-center">
+        <div class="text-pink-500 font-medium flex items-center">
          @radheypy
          <i class="fas fa-external-link-alt ml-2 text-sm">
          </i>
@@ -487,21 +618,21 @@
        </div>
       </a>
       <!-- Snapchat -->
-      <a aria-label="Snapchat Profile" class="group" href="https://snapchat.com/add/mr.dimensionn" target="_blank">
-       <div class="bg-white p-6 rounded-2xl shadow-xl hover-grow fade-in delay-3">
+      <a aria-label="Snapchat Profile" class="group" href="https://snapchat.com/add/mr.dimensionn" rel="noopener noreferrer" target="_blank">
+       <div class="bg-gray-900 p-6 rounded-2xl shadow-xl hover-grow fade-in delay-3 glass-card">
         <div class="flex items-center mb-4">
-         <div class="w-14 h-14 rounded-xl bg-yellow-100 flex items-center justify-center mr-4 group-hover:bg-yellow-400 group-hover:text-white transition">
-          <i class="fab fa-snapchat-ghost text-yellow-500 text-2xl group-hover:text-white">
+         <div class="w-14 h-14 rounded-xl bg-yellow-900 flex items-center justify-center mr-4 group-hover:bg-yellow-400 group-hover:text-white transition">
+          <i class="fab fa-snapchat-ghost text-yellow-400 text-2xl group-hover:text-white">
           </i>
          </div>
-         <h3 class="text-xl font-semibold group-hover:text-yellow-500 transition">
+         <h3 class="text-xl font-semibold group-hover:text-yellow-400 transition text-gray-100">
           Snapchat
          </h3>
         </div>
-        <p class="text-gray-700 mb-4">
+        <p class="text-gray-300 mb-4">
          Add me on Snapchat for daily stories and fun moments.
         </p>
-        <div class="text-yellow-500 font-medium flex items-center">
+        <div class="text-yellow-400 font-medium flex items-center">
          @mr.dimensionn
          <i class="fas fa-external-link-alt ml-2 text-sm">
          </i>
@@ -509,21 +640,21 @@
        </div>
       </a>
       <!-- GitHub -->
-      <a aria-label="GitHub Profile" class="group" href="https://github.com/boloradhey" target="_blank">
-       <div class="bg-white p-6 rounded-2xl shadow-xl hover-grow fade-in delay-4">
+      <a aria-label="GitHub Profile" class="group" href="https://github.com/boloradhey" rel="noopener noreferrer" target="_blank">
+       <div class="bg-gray-900 p-6 rounded-2xl shadow-xl hover-grow fade-in delay-4 glass-card">
         <div class="flex items-center mb-4">
-         <div class="w-14 h-14 rounded-xl bg-gray-200 flex items-center justify-center mr-4 group-hover:bg-gray-800 group-hover:text-white transition">
-          <i class="fab fa-github text-gray-800 text-2xl group-hover:text-white">
+         <div class="w-14 h-14 rounded-xl bg-gray-700 flex items-center justify-center mr-4 group-hover:bg-gray-300 group-hover:text-gray-900 transition">
+          <i class="fab fa-github text-gray-300 text-2xl group-hover:text-gray-900">
           </i>
          </div>
-         <h3 class="text-xl font-semibold group-hover:text-gray-800 transition">
+         <h3 class="text-xl font-semibold group-hover:text-gray-300 transition text-gray-100">
           GitHub
          </h3>
         </div>
-        <p class="text-gray-700 mb-4">
+        <p class="text-gray-300 mb-4">
          Explore my open source projects and contributions on GitHub.
         </p>
-        <div class="text-gray-800 font-medium flex items-center">
+        <div class="text-gray-300 font-medium flex items-center">
          @boloradhey
          <i class="fas fa-external-link-alt ml-2 text-sm">
          </i>
@@ -531,21 +662,21 @@
        </div>
       </a>
       <!-- LinkedIn -->
-      <a aria-label="LinkedIn Profile" class="group" href="https://linkedin.com/in/was-dimu-2a8577370" target="_blank">
-       <div class="bg-white p-6 rounded-2xl shadow-xl hover-grow fade-in delay-5">
+      <a aria-label="LinkedIn Profile" class="group" href="https://linkedin.com/in/was-dimu-2a8577370" rel="noopener noreferrer" target="_blank">
+       <div class="bg-gray-900 p-6 rounded-2xl shadow-xl hover-grow fade-in delay-5 glass-card">
         <div class="flex items-center mb-4">
-         <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center mr-4 group-hover:bg-blue-700 group-hover:text-white transition">
-          <i class="fab fa-linkedin-in text-blue-700 text-2xl group-hover:text-white">
+         <div class="w-14 h-14 rounded-xl bg-blue-900 flex items-center justify-center mr-4 group-hover:bg-blue-700 group-hover:text-white transition">
+          <i class="fab fa-linkedin-in text-blue-600 text-2xl group-hover:text-white">
           </i>
          </div>
-         <h3 class="text-xl font-semibold group-hover:text-blue-700 transition">
+         <h3 class="text-xl font-semibold group-hover:text-blue-600 transition text-gray-100">
           LinkedIn
          </h3>
         </div>
-        <p class="text-gray-700 mb-4">
+        <p class="text-gray-300 mb-4">
          Connect professionally and see my career journey on LinkedIn.
         </p>
-        <div class="text-blue-700 font-medium flex items-center">
+        <div class="text-blue-600 font-medium flex items-center">
          was-dimu
          <i class="fas fa-external-link-alt ml-2 text-sm">
          </i>
@@ -556,82 +687,82 @@
     </div>
     <!-- Contact Page -->
     <div class="page" id="contact">
-     <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center fade-in">
+     <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center fade-in text-gray-100">
       Get In
       <span class="gradient-text">
        Touch
       </span>
       📩
      </h2>
-     <div class="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-xl hover-grow fade-in delay-1">
+     <div class="max-w-2xl mx-auto bg-gray-900 p-8 rounded-2xl shadow-xl hover-grow fade-in delay-1 glass-card">
       <form class="space-y-6" novalidate="">
        <div>
-        <label class="block text-gray-700 font-medium mb-2" for="name">
+        <label class="block text-gray-300 font-medium mb-2" for="name">
          Your Name
         </label>
-        <input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" id="name" name="name" placeholder="Enter your name" required="" type="text"/>
+        <input class="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-red-400 focus:border-transparent" id="name" name="name" placeholder="Enter your name" required="" type="text"/>
        </div>
        <div>
-        <label class="block text-gray-700 font-medium mb-2" for="email">
+        <label class="block text-gray-300 font-medium mb-2" for="email">
          Your Email
         </label>
-        <input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" id="email" name="email" placeholder="Enter your email" required="" type="email"/>
+        <input class="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-red-400 focus:border-transparent" id="email" name="email" placeholder="Enter your email" required="" type="email"/>
        </div>
        <div>
-        <label class="block text-gray-700 font-medium mb-2" for="message">
+        <label class="block text-gray-300 font-medium mb-2" for="message">
          Message
         </label>
-        <textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" id="message" name="message" placeholder="Write your message here" required="" rows="5"></textarea>
+        <textarea class="w-full px-4 py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-red-400 focus:border-transparent" id="message" name="message" placeholder="Write your message here" required="" rows="5"></textarea>
        </div>
-       <button class="w-full gradient-bg text-white font-bold py-3 px-4 rounded-lg hover:opacity-90 transition flex items-center justify-center" type="submit">
+       <button class="w-full gradient-bg font-bold py-3 px-4 rounded-lg hover:opacity-90 transition flex items-center justify-center" type="submit">
         <i class="fas fa-paper-plane mr-2">
         </i>
         Send Message
        </button>
       </form>
-      <div class="mt-8 pt-6 border-t border-gray-200">
-       <h3 class="text-lg font-semibold mb-4">
+      <div class="mt-8 pt-6 border-t border-gray-700">
+       <h3 class="text-lg font-semibold mb-4 text-gray-100">
         Direct Contact
        </h3>
        <div class="space-y-4">
         <div class="flex items-center">
-         <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-4">
-          <i class="fas fa-envelope text-purple-500">
+         <div class="w-10 h-10 rounded-full bg-red-900 flex items-center justify-center mr-4">
+          <i class="fas fa-envelope text-red-400">
           </i>
          </div>
          <div>
           <p class="text-xs text-gray-500">
            Email
           </p>
-          <p class="font-medium">
+          <p class="font-medium text-gray-300">
            radheyjii@outlook.in
           </p>
          </div>
         </div>
         <div class="flex items-center">
-         <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-          <i class="fab fa-telegram text-blue-500">
+         <div class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center mr-4">
+          <i class="fab fa-telegram text-blue-400">
           </i>
          </div>
          <div>
           <p class="text-xs text-gray-500">
            Telegram
           </p>
-          <p class="font-medium">
+          <p class="font-medium text-gray-300">
            @boloradhey
           </p>
          </div>
         </div>
         <div class="flex items-center">
-         <div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center mr-4">
-          <i class="fas fa-phone-alt text-gray-600">
+         <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center mr-4">
+          <i class="fas fa-phone-alt text-gray-400">
           </i>
          </div>
          <div>
           <p class="text-xs text-gray-500">
            Phone
           </p>
-          <p class="font-medium">
+          <p class="font-medium text-gray-300">
            +917304937349
           </p>
          </div>
